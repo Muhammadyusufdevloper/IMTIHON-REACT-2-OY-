@@ -4,11 +4,12 @@ import Product from "../../../../components/products"
 import "./BestSeller.scss"
 
 const BestSeller = () => {
-    let limit = 8
+    let limit = `?limit=${8}`
     const [selectedCategory, setSelectedCategory] = useState("all")
     const { data: categories } = useGetCategoryQuery()
     const categoryData = selectedCategory === "all" ? "" : `/category/${selectedCategory}`
     const { data: products } = useGetProductsCategoryQuery({ category: categoryData, limit })
+    console.log(products);
 
     useEffect(() => {
         console.log(`Selected category: ${selectedCategory}`)
