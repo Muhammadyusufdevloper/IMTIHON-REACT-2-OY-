@@ -32,6 +32,10 @@ const FeaturedProducts = () => {
                     <div className="featured-products__cards">
                         {product}
                     </div>
+                    <form className="featured-products__form">
+                        <input type="text" placeholder="Search query..." id="" />
+                        <button type="button">Search</button>
+                    </form>
                 </div>
             </section>
         </>

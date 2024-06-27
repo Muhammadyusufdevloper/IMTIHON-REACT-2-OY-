@@ -1,6 +1,7 @@
 .best-seller {
   margin-top: 50px;
   margin-bottom: 91px;
+
   &__title {
     text-align: center;
     font-family: Poppins;
@@ -57,6 +58,23 @@
       }
     }
   }
+  &__learn-more {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: left;
+    color: #33a0ff;
+    border: none;
+    background-color: transparent;
+    border-bottom: 3px solid #33a0ff;
+    display: block;
+    margin: 24px auto 0;
+    @media (max-width: 500px) {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  }
   &__selected {
     data {
       color: #33a0ff;
@@ -65,5 +83,8 @@
   }
   @media (max-width: 768px) {
     margin-bottom: 71px;
+  }
+  @media (max-width: 500px) {
+    margin-bottom:50px;
   }
 }

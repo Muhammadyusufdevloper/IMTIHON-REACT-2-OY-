@@ -2,14 +2,17 @@ import { useState, useEffect } from 'react'
 import { useGetCategoryQuery, useGetProductsCategoryQuery } from '../../../../context/api/product-api'
 import Product from "../../../../components/products"
 import "./BestSeller.scss"
-
+import ProductLoading from '../../../../components/product-loading'
+let limit = 8
 const BestSeller = () => {
-    let limit = `?limit=${8}`
     const [selectedCategory, setSelectedCategory] = useState("all")
     const { data: categories } = useGetCategoryQuery()
+    const [limitCunt, setLimitCount] = useState(1)
     const categoryData = selectedCategory === "all" ? "" : `/category/${selectedCategory}`
-    const { data: products } = useGetProductsCategoryQuery({ category: categoryData, limit })
-    console.log(products);
+    const { data: products, isLoading } = useGetProductsCategoryQuery({
+        category: categoryData,
+        limit: limit * limitCunt,
+    })
 
     useEffect(() => {
         console.log(`Selected category: ${selectedCategory}`)
@@ -43,7 +46,13 @@ const BestSeller = () => {
                         {categoryList}
                     </ul>
                 </div>
-                <Product products={products} />
+                {
+                    isLoading ?
+                        <ProductLoading count={8} />
+                        :
+                        <Product products={products} isSingle={true} />
+                }
+                <button disabled={isLoading} onClick={() => setLimitCount(p => p + 1)} className='best-seller__learn-more'>LOAD MORE</button>
             </div>
         </section>
     )

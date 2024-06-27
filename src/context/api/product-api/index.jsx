@@ -10,8 +10,17 @@ export const productApi = api.injectEndpoints({
             providesTags: ["Product"]
         }),
         getProductsCategory: build.query({
-            query: ({ category }) => ({
-                url: `/products${category}`,
+            query: (params) => ({
+                url: `/products${params.category}`,
+                params: {
+                    limit: params.limit
+                }
+            }),
+            providesTags: ["Product"]
+        }),
+        getProductsId: build.query({
+            query: ({ id }) => ({
+                url: `/products/${id}`,
             }),
             providesTags: ["Product"]
         }),
@@ -68,4 +77,5 @@ export const {
     useGetProductsSearchQuery,
     useGetCategoryQuery,
     useGetProductsCategoryQuery,
+    useGetProductByIdQuery,
 } = productApi

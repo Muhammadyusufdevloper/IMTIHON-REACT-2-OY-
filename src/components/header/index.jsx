@@ -10,10 +10,12 @@ import siteLogo from "../../assets/images/header/logo.svg"
 import { CgMenuRight } from "react-icons/cg"
 import { IoCloseCircleOutline } from "react-icons/io5"
 import { FiHome } from "react-icons/fi"
+import { useSelector } from "react-redux"
 const Header = () => {
     const [searchMenu, setSearchMenu] = useState(false)
     const [menu, setMenu] = useState(false)
     const [shrink, setShrink] = useState(0)
+    const wishlistSlice = useSelector(state => state.wishlist.value)
     window.addEventListener("scroll", () => {
         setShrink(scrollY)
     })
@@ -38,9 +40,14 @@ const Header = () => {
                             <FaRegUser />
                             <p>Account</p>
                         </NavLink>
-                        <NavLink to={"/like"} className="top-header__link-icons">
+                        <NavLink to={"/wishlist"} className="top-header__link-icons">
                             <GoHeart />
                             <p>Like</p>
+                            {
+                                wishlistSlice.length === 0 ? <></>
+                                    :
+                                    <span>{wishlistSlice.length}</span>
+                            }
                         </NavLink>
                         <NavLink to={"/cart"} className="top-header__link-icons">
                             <PiShoppingCartSimple />
@@ -90,7 +97,7 @@ const Header = () => {
                             <a href="#" className="header__link">BELT</a>
                         </li>
                         <li className="header__item">
-                            <NavLink className="header__link">CONTACT</NavLink>
+                            <NavLink to={"/contact"} className="header__link">CONTACT</NavLink>
                         </li>
                     </ul>
                     <button onClick={() => setMenu(true)} className="header__menu-btn"><CgMenuRight /></button>
