@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "./WindowLoading.scss";
 
 const WindowLoading = () => {
@@ -14,4 +15,4 @@ const WindowLoading = () => {
     )
 }
 
-export default WindowLoading
+export default memo(WindowLoading);

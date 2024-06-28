@@ -2,6 +2,7 @@ import "./LatestNews.scss"
 import new1 from "../../../../assets/images/latest-news/Nike-logo.png";
 import new2 from "../../../../assets/images/latest-news/figma-logo.png";
 import new3 from "../../../../assets/images/latest-news/kronos-logo.png";
+import { memo } from "react";
 const LatestNews = () => {
     return (
         <>
@@ -55,4 +56,4 @@ const LatestNews = () => {
     )
 }
 
-export default LatestNews
+export default memo(LatestNews);

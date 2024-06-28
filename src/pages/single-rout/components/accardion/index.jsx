@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import './Accordion.scss';
 
 const Accordion = () => {
@@ -60,4 +60,4 @@ const Accordion = () => {
         </div>
     );
 };
-export default Accordion;
+export default memo(Accordion);

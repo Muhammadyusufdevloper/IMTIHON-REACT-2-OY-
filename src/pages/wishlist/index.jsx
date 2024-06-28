@@ -3,6 +3,7 @@ import Product from "../../components/products"
 import img from "../../assets/images/wishlist/wishlist.jpg"
 import "./Wishlist.scss"
 import { Link } from "react-router-dom"
+import { memo } from "react"
 const Wishlist = () => {
     const wishlistSlice = useSelector(state => state.wishlist.value)
     return (
@@ -24,4 +25,4 @@ const Wishlist = () => {
     )
 }
 
-export default Wishlist
+export default memo(Wishlist)

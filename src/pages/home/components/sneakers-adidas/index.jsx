@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import "./SneakersAdidas.scss"
 import img from "../../../../assets/images/sneakers/shoes-sneakers.png"
+import { memo } from "react"
 const SneakersAdidas = () => {
   return (
     <>
@@ -22,4 +23,4 @@ const SneakersAdidas = () => {
   )
 }
 
-export default SneakersAdidas
+export default memo(SneakersAdidas);

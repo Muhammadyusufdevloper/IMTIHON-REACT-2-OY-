@@ -2,6 +2,7 @@ import { Navigate, Outlet } from "react-router-dom"
 import Header from "../../components/header"
 import Footer from "../../components/footer"
 import { useSelector } from "react-redux"
+import { memo } from "react"
 
 
 const Auth = () => {
@@ -15,4 +16,4 @@ const Auth = () => {
   )
 }
 
-export default Auth
+export default memo(Auth)

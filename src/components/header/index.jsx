@@ -4,7 +4,7 @@ import { PiShoppingCartSimple } from "react-icons/pi"
 import { Link, NavLink } from "react-router-dom"
 import Search from "../search"
 import "./Header.scss"
-import { useEffect, useState } from "react"
+import { memo, useEffect, useState } from "react"
 import { RiCloseLargeFill } from "react-icons/ri"
 import siteLogo from "../../assets/images/header/logo.svg"
 import { CgMenuRight } from "react-icons/cg"
@@ -107,4 +107,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default memo(Header)

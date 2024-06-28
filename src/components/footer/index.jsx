@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import logo from "../../assets/images/footer/logo.svg";
 import facebook from "../../assets/images/footer/facebook.png";
 import twitter from "../../assets/images/footer/twitter.png";
@@ -129,4 +129,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default memo(Footer);

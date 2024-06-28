@@ -7,7 +7,7 @@ import { TiHeartOutline, TiPlus } from "react-icons/ti";
 import { FiMinus } from "react-icons/fi";
 import Accordion from "./components/accardion";
 import RelatedProduct from "./components/related-products";
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { useGetProductByIdQuery } from "../../context/api/product-api";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleHeart } from "../../context/slices/wishlistSlice";
@@ -157,4 +157,4 @@ const SingleRout = () => {
     );
 };
 
-export default SingleRout;
+export default memo(SingleRout);

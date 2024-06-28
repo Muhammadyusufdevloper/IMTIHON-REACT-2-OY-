@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "./Hero.scss";
 const Hero = () => {
   let hours = new Date().getHours()
@@ -31,4 +32,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default memo(Hero)

@@ -1,3 +1,4 @@
+import { memo } from "react"
 import ProductLoading from "../../../../components/product-loading"
 import Product from "../../../../components/products"
 import { useGetProductsQuery } from "../../../../context/api/product-api"
@@ -21,4 +22,4 @@ const RelatedProduct = () => {
     )
 }
 
-export default RelatedProduct
+export default memo(RelatedProduct)

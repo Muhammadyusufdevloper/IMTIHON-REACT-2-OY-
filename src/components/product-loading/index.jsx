@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "./ProductLoading.scss"
 
 const ProductLoading = ({ count }) => {
@@ -28,4 +29,4 @@ const ProductLoading = ({ count }) => {
     );
 }
 
-export default ProductLoading;
+export default memo(ProductLoading);

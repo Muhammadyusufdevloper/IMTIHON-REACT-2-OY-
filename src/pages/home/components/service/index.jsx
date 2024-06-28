@@ -2,6 +2,7 @@ import shippingImg from "../../../../assets/images/service/shipping.png"
 import refoundImg from "../../../../assets/images/service/refund.png"
 import supportImg from "../../../../assets/images/service/support.png"
 import "./Service.scss"
+import { memo } from "react"
 const Service = () => {
   return (
     <>
@@ -30,4 +31,4 @@ const Service = () => {
   )
 }
 
-export default Service
+export default memo(Service);

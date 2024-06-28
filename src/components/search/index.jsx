@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import "./Search.scss";
 import { Link } from "react-router-dom";
 import { useGetProductsQuery } from "../../context/api/product-api";
@@ -54,4 +54,4 @@ const Search = ({ searchMenu, setSearchMenu }) => {
     );
 };
 
-export default Search;
+export default memo(Search);

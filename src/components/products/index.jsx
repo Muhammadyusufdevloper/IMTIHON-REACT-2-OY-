@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { toggleHeart } from "../../context/slices/wishlistSlice"
 import { AiFillHeart } from "react-icons/ai"
+import { memo } from "react"
 const Product = ({ products, isSingle }) => {
     let dispatch = useDispatch()
     let wishlistSlice = useSelector(state => state.wishlist.value)
@@ -73,4 +74,4 @@ const Product = ({ products, isSingle }) => {
     )
 }
 
-export default Product
+export default memo(Product);
