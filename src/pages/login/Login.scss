@@ -1,0 +1,90 @@
+.login {
+    margin-bottom: 40px;
+  &__wrapper {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 27px;
+    width: 100%;
+    max-width: 510px;
+  }
+  &__input-card {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    label {
+      font-family: Raleway;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16.44px;
+      color: #373737;
+    }
+  }
+  &__input-card {
+    width: 100%;
+    input {
+      width: 100%;
+      border: 1px solid #33a0ff;
+      box-shadow: 1px 3px 3px 0px #00000003;
+      outline: none;
+      border-radius: 3px;
+      height: 53px;
+      display: flex;
+      align-items: flex-start;
+      padding: 0 20px 0 10px;
+    }
+  }
+  &__password-input-eye {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    input {
+      width: 100%;
+      border: 1px solid #33a0ff;
+      box-shadow: 1px 3px 3px 0px #00000003;
+      outline: none;
+      border-radius: 3px;
+      height: 53px;
+      padding: 0 20px 0 10px;
+      display: flex;
+      align-items: flex-start;
+    }
+    button {
+      position: absolute;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border: none;
+      color: #33a0ff;
+      font-size: 20px;
+    }
+  }
+  &__form-button {
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 32.74px;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 10px 40px 0px #f8a17033;
+    height: 53px;
+    border: none;
+    background: #33A0FF;
+  }
+}

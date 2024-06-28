@@ -1,5 +1,6 @@
 import "./Contact.scss";
 import img from "../../assets/images/contact/Union.png"
+import { memo } from "react";
 const Contact = () => {
     return (
         <>
@@ -32,10 +33,14 @@ const Contact = () => {
                             <button>Submit</button>
                         </form>
                     </div>
+                    <form className="contact__search-form">
+                        <input type="text" placeholder="Search query..." id="" />
+                        <button type="button">Search</button>
+                    </form>
                 </div>
             </section>
         </>
     )
 }
 
-export default Contact
+export default memo(Contact)

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useGetProductsQuery } from "../../../../context/api/product-api"
 import "./Banners.scss"
+import { memo } from "react";
 const Banners = () => {
     const { data } = useGetProductsQuery({ limit: 3 })
     console.log(data);
@@ -30,4 +31,4 @@ const Banners = () => {
     )
 }
 
-export default Banners
+export default memo(Banners)

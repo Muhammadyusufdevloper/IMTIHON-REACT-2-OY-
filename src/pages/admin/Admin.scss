@@ -1,0 +1,43 @@
+.admin {
+  padding: 70px 0;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+    margin-bottom: 41px;
+  }
+
+  &__box {
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+
+    p {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 28.8px;
+      letter-spacing: 0.5px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+      overflow: hidden;
+    }
+
+    button {
+      background: #33a0ff;
+      border-radius: 10px;
+      font-weight: 600;
+      line-height: 32.74px;
+      letter-spacing: -0.02em;
+      border: none;
+      font-size: 20px;
+      padding: 8px 40px;
+      color: #ffffff;
+      box-shadow: 0px 10px 40px 0px #f8a17033;
+    }
+  }
+}

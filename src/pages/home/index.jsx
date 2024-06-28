@@ -1,3 +1,4 @@
+import { memo } from "react"
 import Banners from "./components/banners"
 import BestSeller from "./components/best-seller"
 import FeaturedProducts from "./components/featured-products"
@@ -20,4 +21,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default memo(Home)

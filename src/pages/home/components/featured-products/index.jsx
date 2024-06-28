@@ -1,6 +1,7 @@
 import { IoMdStar } from "react-icons/io"
 import { useGetProductsQuery } from "../../../../context/api/product-api"
 import "./FeaturedProducts.scss"
+import { memo } from "react"
 const FeaturedProducts = () => {
     const { data } = useGetProductsQuery({ limit: 3 })
     const product = data?.map((product) => (
@@ -42,4 +43,4 @@ const FeaturedProducts = () => {
     )
 }
 
-export default FeaturedProducts
+export default memo(FeaturedProducts)

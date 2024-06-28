@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, memo } from 'react'
 import { useGetCategoryQuery, useGetProductsCategoryQuery } from '../../../../context/api/product-api'
 import Product from "../../../../components/products"
 import "./BestSeller.scss"
@@ -58,5 +58,5 @@ const BestSeller = () => {
     )
 }
 
-export default BestSeller
+export default memo(BestSeller)
 
