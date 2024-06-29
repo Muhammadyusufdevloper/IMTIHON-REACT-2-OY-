@@ -154,14 +154,15 @@
     display: none;
   }
   &__overly {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #0000007b;
-    backdrop-filter: blur(3px);
-    // transition: all 0.5s ease;
+    @media (max-width: 600px) {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      min-height: 100vh;
+      background-color: #0000007b;
+      backdrop-filter: blur(3px);
+    }
   }
   &__overly__show {
     left: 0;

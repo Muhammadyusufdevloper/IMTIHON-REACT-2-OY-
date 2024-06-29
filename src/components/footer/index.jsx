@@ -39,7 +39,7 @@ const Footer = () => {
                     <div className={`footer__top__row ${isMobile && openTopSection === 'logo' ? 'open' : ''}`}>
                         <h3 onClick={() => toggleTopSection('logo')} className="footer__logo-wrapper" >
                             <img src={logo} alt="" />
-                            <h4 className="footer__logo-title">E-COMMERCE</h4>
+                            <p style={{ fontSize: "20px", fontWeight: "bold" }} className="footer__logo-title">E-COMMERCE</p>
                         </h3>
                         {(!isMobile || openTopSection === 'logo') && (
                             <p>

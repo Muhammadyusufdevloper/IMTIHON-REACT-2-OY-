@@ -161,10 +161,6 @@
 }
 
 @media (max-width: 420px) {
-  .footer {
-    height: calc(100vh - 500px);
-  }
-
   .footer__top {
     grid-template-columns: repeat(2, 1fr);
   }
