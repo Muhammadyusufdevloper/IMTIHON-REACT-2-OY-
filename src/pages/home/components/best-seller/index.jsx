@@ -9,7 +9,7 @@ const BestSeller = () => {
     const { data: categories } = useGetCategoryQuery()
     const [limitCunt, setLimitCount] = useState(1)
     const categoryData = selectedCategory === "all" ? "" : `/category/${selectedCategory}`
-    const { data: products, isLoading } = useGetProductsCategoryQuery({
+    const { data: products, isLoading, isError } = useGetProductsCategoryQuery({
         category: categoryData,
         limit: limit * limitCunt,
     })
@@ -47,7 +47,7 @@ const BestSeller = () => {
                     </ul>
                 </div>
                 {
-                    isLoading ?
+                    isLoading || isError ?
                         <ProductLoading count={8} />
                         :
                         <Product products={products} isSingle={true} />

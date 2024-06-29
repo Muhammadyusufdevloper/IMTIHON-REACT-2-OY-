@@ -20,5 +20,23 @@
     img {
       margin-bottom: 30px;
     }
+    @media (max-width: 650px) {
+      img {
+        width: 450px;
+        height: 400px;
+      }
+    }
+    @media (max-width: 480px) {
+      img {
+        width: 380px;
+        height: 340px;
+      }
+    }
+    @media (max-width: 400px) {
+      img {
+        width: 280px;
+        height: 200px;
+      }
+    }
   }
 }

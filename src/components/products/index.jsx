@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { toggleHeart } from "../../context/slices/wishlistSlice"
 import { AiFillHeart } from "react-icons/ai"
 import { memo } from "react"
+import { addToCart } from "../../context/slices/cartSlice";
 const Product = ({ products, isSingle }) => {
     let dispatch = useDispatch()
     let wishlistSlice = useSelector(state => state.wishlist.value)
@@ -25,7 +26,7 @@ const Product = ({ products, isSingle }) => {
                                     <TiHeartOutline />
                             }
                         </button>
-                        <button className="product__like-btn">
+                        <button onClick={() => dispatch(addToCart(product))} className="product__like-btn">
                             <MdOutlineShoppingCart />
                         </button>
                     </div>

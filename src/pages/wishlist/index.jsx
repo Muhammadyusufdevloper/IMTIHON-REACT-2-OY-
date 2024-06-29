@@ -3,9 +3,12 @@ import Product from "../../components/products"
 import img from "../../assets/images/wishlist/wishlist.jpg"
 import "./Wishlist.scss"
 import { Link } from "react-router-dom"
-import { memo } from "react"
+import { memo, useEffect } from "react"
 const Wishlist = () => {
     const wishlistSlice = useSelector(state => state.wishlist.value)
+    useEffect(() => {
+        scroll(0, 0)
+    }, [])
     return (
         <>
             <section className="wishlist">
@@ -17,7 +20,7 @@ const Wishlist = () => {
                                 <Link to={"/"}>Home</Link>
                             </div>
                             :
-                            < Product products={wishlistSlice} isSingle={true}/>
+                            < Product products={wishlistSlice} isSingle={true} />
                     }
                 </div>
             </section>

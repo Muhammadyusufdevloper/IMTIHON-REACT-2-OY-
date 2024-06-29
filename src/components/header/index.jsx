@@ -16,9 +16,16 @@ const Header = () => {
     const [menu, setMenu] = useState(false)
     const [shrink, setShrink] = useState(0)
     const wishlistSlice = useSelector(state => state.wishlist.value)
+    const cartSlice = useSelector(state => state.cart.value)
     window.addEventListener("scroll", () => {
         setShrink(scrollY)
     })
+    const handelCloseMenu = () => {
+        setMenu(false)
+    }
+
+    
+
     return (
         <>
             <div className="top-header">
@@ -36,11 +43,11 @@ const Header = () => {
                         </select>
                     </div>
                     <div className="top-header__right-box">
-                        <NavLink to={"/login"} className="top-header__link-icons">
+                        <NavLink onClick={handelCloseMenu} to={"/login"} className="top-header__link-icons">
                             <FaRegUser />
                             <p>Account</p>
                         </NavLink>
-                        <NavLink to={"/wishlist"} className="top-header__link-icons">
+                        <NavLink onClick={handelCloseMenu} to={"/wishlist"} className="top-header__link-icons">
                             <GoHeart />
                             <p>Like</p>
                             {
@@ -49,11 +56,16 @@ const Header = () => {
                                     <span>{wishlistSlice.length}</span>
                             }
                         </NavLink>
-                        <NavLink to={"/cart"} className="top-header__link-icons">
+                        <NavLink onClick={handelCloseMenu} to={"/cart"} className="top-header__link-icons">
                             <PiShoppingCartSimple />
                             <p>Cart</p>
+                            {
+                                cartSlice.length === 0 ? <></>
+                                    :
+                                    <span>{cartSlice.length}</span>
+                            }
                         </NavLink>
-                        <Link className="top-header__item-text"> Items</Link>
+                        <Link onClick={handelCloseMenu} className="top-header__item-text"> Items</Link>
                         <div className="top-header__search-box">
                             <button onClick={() => setSearchMenu(p => !p)} className="top-header__search-btn">
                                 {
@@ -66,7 +78,7 @@ const Header = () => {
                             </button>
                             <Search searchMenu={searchMenu} setSearchMenu={setSearchMenu} />
                         </div>
-                        <NavLink to={"/"} className="top-header__item-home">
+                        <NavLink onClick={handelCloseMenu} to={"/"} className="top-header__item-home">
                             <FiHome />
                             <p>Home</p>
                         </NavLink>
@@ -85,7 +97,7 @@ const Header = () => {
                             <button onClick={() => setMenu(false)} className="header__link"><IoCloseCircleOutline /></button>
                         </li>
                         <li className="header__item">
-                            <NavLink to={"/"} className="header__link">HOME</NavLink>
+                            <NavLink onClick={handelCloseMenu} to={"/"} className="header__link">HOME</NavLink>
                         </li>
                         <li className="header__item">
                             <a href="#" className="header__link">BAGS</a>
@@ -97,7 +109,7 @@ const Header = () => {
                             <a href="#" className="header__link">BELT</a>
                         </li>
                         <li className="header__item">
-                            <NavLink to={"/contact"} className="header__link">CONTACT</NavLink>
+                            <NavLink onClick={handelCloseMenu} to={"/contact"} className="header__link">CONTACT</NavLink>
                         </li>
                     </ul>
                     <button onClick={() => setMenu(true)} className="header__menu-btn"><CgMenuRight /></button>

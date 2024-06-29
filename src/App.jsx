@@ -9,6 +9,7 @@ import Admin from "./pages/admin"
 import Auth from "./pages/auth"
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+import Cart from "./pages/cart"
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login />} />
+          <Route path="cart" element={<Cart />} />
           <Route path="single-rout/:id" element={<SingleRout />} />
         </Route>
         <Route path="/" element={<Auth />}>

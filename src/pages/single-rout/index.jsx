@@ -12,16 +12,18 @@ import { useGetProductByIdQuery } from "../../context/api/product-api";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleHeart } from "../../context/slices/wishlistSlice";
 import { AiFillHeart } from "react-icons/ai";
+import { addToCart, decreaseAmount, increaseAmount } from "../../context/slices/cartSlice";
 
 const SingleRout = () => {
     const { id } = useParams()
     const { data } = useGetProductByIdQuery(id)
     let dispatch = useDispatch()
     console.log(data);
-    let wishlistSlice = useSelector(state=>state.wishlist.value)
+    let wishlistSlice = useSelector(state => state.wishlist.value)
     useEffect(() => {
         scroll(0, 0)
     }, [id])
+    console.log(data?.amount);
     return (
         <>
             <section className="single-rout">
@@ -94,18 +96,18 @@ const SingleRout = () => {
                                 </div>
                                 <div className="single-rout__top-box__info-card single-rout__top-box__button-card">
                                     <div className="single-rout__top-box__count-buttons">
-                                        <button className="single-rout__top-box__decrement-btn"><FiMinus /></button>
-                                        <span>1</span>
-                                        <button className="single-rout__top-box__increment-btn"><TiPlus /></button>
+                                        <button disabled={data?.amount <= 0} onClick={() => dispatch(decreaseAmount(data))} className="single-rout__top-box__decrement-btn"><FiMinus /></button>
+                                        <span>{data?.amount}</span>
+                                        <button disabled={data?.count < data?.amount} onClick={() => dispatch(increaseAmount(data))} className="single-rout__top-box__increment-btn"><TiPlus /></button>
                                     </div>
                                     <div className="single-rout__top-box__cart-like-buttons">
-                                        <button className="single-rout__top-box__cart-btn">
+                                        <button onClick={() => dispatch(addToCart(data))} className="single-rout__top-box__cart-btn">
                                             <MdShoppingCart />
                                             <p>Add To Cart</p>
                                         </button>
                                         <button onClick={() => dispatch(toggleHeart(data))} className="single-rout__top-box__like-btn">
                                             {
-                                                wishlistSlice.some((el) => el.id === data.id) ?
+                                                wishlistSlice.some((el) => el.id === data?.id) ?
                                                     <AiFillHeart />
                                                     :
                                                     <TiHeartOutline />
