@@ -2,13 +2,14 @@ import { IoMdStar } from "react-icons/io"
 import { useGetProductsQuery } from "../../../../context/api/product-api"
 import "./FeaturedProducts.scss"
 import { memo } from "react"
+import { Link } from "react-router-dom"
 const FeaturedProducts = () => {
     const { data } = useGetProductsQuery({ limit: 3 })
     const product = data?.map((product) => (
         <div className="featured-products__card" key={product.id}>
-            <div className="featured-products__images-boxes">
+            <Link to={`/single-rout/${product.id}`} className="featured-products__images-boxes">
                 <img src={product.image} alt={product.title} />
-            </div>
+            </Link>
             <div className="featured-products__info-box">
                 <h3 className="featured-products__card-title">{product.title}</h3>
                 <div className="featured-products__star-card">
