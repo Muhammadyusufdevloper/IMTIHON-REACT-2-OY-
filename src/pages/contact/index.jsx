@@ -58,6 +58,7 @@ const Contact = () => {
                             <div>
                                 <label htmlFor="full-name">Fullname</label>
                                 <input
+                                    required
                                     onChange={handleChange}
                                     value={formData.fullName}
                                     name="fullName"
@@ -69,6 +70,7 @@ const Contact = () => {
                             <div>
                                 <label htmlFor="email">Email</label>
                                 <input
+                                    required
                                     onChange={handleChange}
                                     value={formData.email}
                                     name="email"
@@ -91,7 +93,8 @@ const Contact = () => {
                         </form>
                     </div>
                     <form className="contact__search-form">
-                        <input type="text" placeholder="Search query..." />
+                        <input
+                             type="text" placeholder="Search query..." />
                         <button type="button">Search</button>
                     </form>
                 </div>
