@@ -8,7 +8,7 @@ import { memo, useState } from "react"
 import { RiCloseLargeFill } from "react-icons/ri"
 import siteLogo from "../../assets/images/header/logo.svg"
 import { CgMenuRight } from "react-icons/cg"
-import { IoCloseCircleOutline } from "react-icons/io5"
+import { IoArrowDownCircle, IoCloseCircleOutline } from "react-icons/io5"
 import { FiHome } from "react-icons/fi"
 import { useSelector } from "react-redux"
 const Header = () => {
@@ -17,17 +17,23 @@ const Header = () => {
     const [shrink, setShrink] = useState(0)
     const wishlistSlice = useSelector(state => state.wishlist.value)
     const cartSlice = useSelector(state => state.cart.value)
+    let isLogin = useSelector(state => state.auth.token)
     window.addEventListener("scroll", () => {
         setShrink(scrollY)
     })
     const handelCloseMenu = () => {
         setMenu(false)
     }
-
-    
-
+    const handelTop = () => {
+        scroll(0, 0)
+    }
     return (
         <>
+            {
+                shrink > 100 ?
+                    <button className="bac_top" onClick={handelTop}><IoArrowDownCircle /></button>
+                    : <></>
+            }
             <div className="top-header">
                 <div className="container top-header__wrapper">
                     <div className="top-header__left-box">
@@ -43,9 +49,9 @@ const Header = () => {
                         </select>
                     </div>
                     <div className="top-header__right-box">
-                        <NavLink onClick={handelCloseMenu} to={"/login"} className="top-header__link-icons">
+                        <NavLink onClick={handelCloseMenu} to={isLogin ? "/admin" : "/login"} className="top-header__link-icons">
                             <FaRegUser />
-                            <p>Account</p>
+                            <p>{isLogin ? "Account" : "/Login"}</p>
                         </NavLink>
                         <NavLink onClick={handelCloseMenu} to={"/wishlist"} className="top-header__link-icons">
                             <GoHeart />

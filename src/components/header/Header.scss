@@ -1,3 +1,14 @@
+.bac_top {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  border: none;
+  background-color: transparent;
+  color: #081b24;
+  font-size: 40px;
+  z-index: 999999999;
+  transform: rotate(180deg);
+}
 .top-header {
   padding: 16px 0;
   border-bottom: 2px solid #fafafb;
@@ -88,7 +99,7 @@
 .header {
   padding: 30px 0;
   background-color: #fff;
-  transition: all 0.5s ease;
+  transition: all 0.4s ease;
   position: sticky;
   z-index: 99;
   &__shrink {

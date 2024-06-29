@@ -15,8 +15,6 @@ const SingleLoading = () => {
                         <div className=" loading-animation"></div>
                         <div className=" loading-animation"></div>
                     </div>
-                    <div className="single-loading__img-box loading loading-animation">
-                    </div>
                 </div>
             </section>
         </>

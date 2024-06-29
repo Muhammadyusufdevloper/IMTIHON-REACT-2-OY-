@@ -3,7 +3,7 @@ import { useGetProductsQuery } from "../../../../context/api/product-api"
 import "./Banners.scss"
 import { memo } from "react";
 const Banners = () => {
-    const { data } = useGetProductsQuery({ limit: 3 })
+    const { data, isLoading } = useGetProductsQuery({ limit: 3 })
     console.log(data);
     const productsCard = data?.map(product => (
         <Link key={product.id} to={`single-rout/${product.id}`}>
@@ -23,9 +23,15 @@ const Banners = () => {
     return (
         <div className="banners">
             <div className="container ">
-                <div className="banners__cards">
-                    {productsCard}
-                </div>
+                {
+                    isLoading ?
+                        <div className="banners__loading loading-animation">
+                        </div>
+                        :
+                        <div className="banners__cards">
+                            {productsCard}
+                        </div>
+                }
             </div>
         </div>
     )

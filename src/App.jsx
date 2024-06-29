@@ -10,6 +10,7 @@ import Auth from "./pages/auth"
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import Cart from "./pages/cart"
+import NoteFound from "./pages/not-found"
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="login" element={<Login />} />
           <Route path="cart" element={<Cart />} />
           <Route path="single-rout/:id" element={<SingleRout />} />
+          <Route path="*" element={<NoteFound />} />
         </Route>
         <Route path="/" element={<Auth />}>
           <Route path="admin" element={<Admin />} />
