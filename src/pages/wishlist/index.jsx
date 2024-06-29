@@ -8,7 +8,7 @@ const Wishlist = () => {
     const wishlistSlice = useSelector(state => state.wishlist.value)
     useEffect(() => {
         scroll(0, 0)
-    }, [])
+    }, [wishlistSlice])
     return (
         <>
             <section className="wishlist">

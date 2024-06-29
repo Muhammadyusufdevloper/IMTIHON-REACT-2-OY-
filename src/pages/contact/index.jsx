@@ -1,6 +1,6 @@
 import "./Contact.scss";
 import img from "../../assets/images/contact/Union.png";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import { useGetValue } from "../../hooks/useGetValue";
 import { toast } from "react-toastify";
 
@@ -14,14 +14,15 @@ const initialState = {
 
 const Contact = () => {
     const { formData, handleChange, setFormData } = useGetValue(initialState);
-
+    useEffect(() => {
+        scroll(0, 0)
+    }, [])
     const handleSendMessage = (e) => {
         e.preventDefault();
         const text = `Ism: ${formData.fullName}%0AEmail: ${formData.email}%0AHabar: ${formData.message}`;
         const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}`;
         let api = new XMLHttpRequest();
         api.open("GET", url, true);
-
         api.onload = () => {
             if (api.status === 200) {
                 toast.success("Ma'lumot saqlandi");
