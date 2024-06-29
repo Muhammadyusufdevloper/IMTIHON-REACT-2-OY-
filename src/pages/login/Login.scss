@@ -1,5 +1,6 @@
 .login {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
+  margin-top: 20px;
   &__wrapper {
     min-height: calc(100vh - 400px);
     display: flex;
@@ -68,6 +69,10 @@
       border: none;
       color: #33a0ff;
       font-size: 20px;
+      @media (max-width: 350px) {
+        font-size: 12px;
+        font-weight: 400px;
+      }
     }
   }
   &__form-button {
@@ -85,6 +90,6 @@
     box-shadow: 0px 10px 40px 0px #f8a17033;
     height: 53px;
     border: none;
-    background: #33A0FF;
+    background: #33a0ff;
   }
 }
